@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.NewsDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <ImageView
+                style="@style/IconStyle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_back_" />
+
+            <TextView
+                android:id="@+id/backNewsActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/motera_bold"
+                android:gravity="center"
+                android:text="NEWSIFY"
+                android:textColor="#FF5300"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/fabShare"
+                android:background="@drawable/round_shape"
+                android:layout_width="45dp"
+                android:padding="@dimen/_9sdp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/share"/>
+
+        </RelativeLayout>
+
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/imgNd"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="250dp"-->
+        <!--                    android:scaleType="fitXY" />-->
+
+        <!--            </LinearLayout>-->
+
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="5dp">-->
+
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/title"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginTop="5dp"-->
+        <!--                    android:padding="5dp"-->
+        <!--                    android:text="Minecraft Legends Review - IGN"-->
+        <!--                    android:textColor="#FF5300"-->
+        <!--                    android:textSize="18dp"-->
+        <!--                    android:textStyle="bold" />-->
+        <!--            </LinearLayout>-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/descNd"-->
+        <!--                style="@style/TextStyle"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_margin="5dp"-->
+        <!--                android:padding="5dp"-->
+        <!--                android:text="Net inflows into open-ended equity funds jumped 31 percent to Rs 20,534.21 crore, a one-year high, during March, even as Indian stock markets inched lower during the month, data released by the Assoc… [+5691 chars]"-->
+        <!--                android:textSize="16dp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/contentNd"-->
+        <!--                style="@style/TextStyle"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="5dp"-->
+        <!--                android:layout_marginEnd="5dp"-->
+        <!--                android:layout_marginBottom="5dp"-->
+        <!--                android:padding="5dp"-->
+        <!--                android:text="Net inflows into open-ended equity funds jumped 31 percent to Rs 20,534.21 crore, a one-year high, during March, even as Indian stock markets inched lower during the month, data released by the Assoc… [+5691 chars]"-->
+        <!--                android:textSize="16dp" />-->
+
+        <!--            <View-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="0dp"-->
+        <!--                android:layout_weight="1" />-->
+
+
+        <!--            <Button-->
+        <!--                android:id="@+id/btnUrl"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center|bottom"-->
+        <!--                android:layout_margin="10dp"-->
+        <!--                android:backgroundTint="#FF5300"-->
+        <!--                android:text="Read Full News"-->
+        <!--                android:textColor="#FFF"-->
+        <!--                app:cornerRadius="10dp" />-->
+
+    </LinearLayout>
+
+</LinearLayout>
