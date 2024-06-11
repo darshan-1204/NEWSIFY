@@ -71,14 +71,12 @@ class HomeFragment : Fragment() {
             binding.health.setTextColor(Color.parseColor(colorCode2))
             binding.entertainment.setTextColor(Color.parseColor(colorCode2))
             binding.science.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.technology.setTextColor(Color.parseColor(colorCode2))
 
 
             binding.lineSport.visibility = View.VISIBLE
             binding.lineBusiness.visibility = View.GONE
             binding.lineEntertainment.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineHealth.visibility = View.GONE
             binding.lineTechnology.visibility = View.GONE
             binding.lineScience.visibility = View.GONE
@@ -92,13 +90,11 @@ class HomeFragment : Fragment() {
             binding.health.setTextColor(Color.parseColor(colorCode2))
             binding.entertainment.setTextColor(Color.parseColor(colorCode2))
             binding.science.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.sports.setTextColor(Color.parseColor(colorCode2))
 
             binding.lineTechnology.visibility = View.VISIBLE
             binding.lineBusiness.visibility = View.GONE
             binding.lineEntertainment.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineHealth.visibility = View.GONE
             binding.lineSport.visibility = View.GONE
             binding.lineScience.visibility = View.GONE
@@ -112,13 +108,11 @@ class HomeFragment : Fragment() {
             binding.health.setTextColor(Color.parseColor(colorCode2))
             binding.entertainment.setTextColor(Color.parseColor(colorCode2))
             binding.science.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.technology.setTextColor(Color.parseColor(colorCode2))
 
             binding.lineBusiness.visibility = View.VISIBLE
             binding.lineSport.visibility = View.GONE
             binding.lineEntertainment.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineHealth.visibility = View.GONE
             binding.lineTechnology.visibility = View.GONE
             binding.lineScience.visibility = View.GONE
@@ -131,13 +125,11 @@ class HomeFragment : Fragment() {
             binding.sports.setTextColor(Color.parseColor(colorCode2))
             binding.entertainment.setTextColor(Color.parseColor(colorCode2))
             binding.science.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.technology.setTextColor(Color.parseColor(colorCode2))
 
             binding.lineHealth.visibility = View.VISIBLE
             binding.lineBusiness.visibility = View.GONE
             binding.lineEntertainment.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineSport.visibility = View.GONE
             binding.lineTechnology.visibility = View.GONE
             binding.lineScience.visibility = View.GONE
@@ -150,13 +142,11 @@ class HomeFragment : Fragment() {
             binding.health.setTextColor(Color.parseColor(colorCode2))
             binding.entertainment.setTextColor(Color.parseColor(colorCode2))
             binding.sports.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.technology.setTextColor(Color.parseColor(colorCode2))
 
             binding.lineScience.visibility = View.VISIBLE
             binding.lineBusiness.visibility = View.GONE
             binding.lineEntertainment.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineHealth.visibility = View.GONE
             binding.lineTechnology.visibility = View.GONE
             binding.lineSport.visibility = View.GONE
@@ -169,13 +159,11 @@ class HomeFragment : Fragment() {
             binding.health.setTextColor(Color.parseColor(colorCode2))
             binding.sports.setTextColor(Color.parseColor(colorCode2))
             binding.science.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.technology.setTextColor(Color.parseColor(colorCode2))
 
             binding.lineEntertainment.visibility = View.VISIBLE
             binding.lineBusiness.visibility = View.GONE
             binding.lineSport.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineHealth.visibility = View.GONE
             binding.lineTechnology.visibility = View.GONE
             binding.lineScience.visibility = View.GONE
@@ -207,12 +195,10 @@ class HomeFragment : Fragment() {
             binding.health.setTextColor(Color.parseColor(colorCode2))
             binding.entertainment.setTextColor(Color.parseColor(colorCode2))
             binding.science.setTextColor(Color.parseColor(colorCode2))
-//            binding.general.setTextColor(Color.parseColor(colorCode2))
             binding.technology.setTextColor(Color.parseColor(colorCode2))
             binding.lineSport.visibility = View.VISIBLE
             binding.lineEntertainment.visibility = View.GONE
             binding.lineBusiness.visibility = View.GONE
-//            binding.lineGeneral.visibility = View.GONE
             binding.lineHealth.visibility = View.GONE
             binding.lineTechnology.visibility = View.GONE
             binding.lineScience.visibility = View.GONE
@@ -220,7 +206,7 @@ class HomeFragment : Fragment() {
 
         }
         alertDialogBuilder.setOnCancelListener(DialogInterface.OnCancelListener {
-            // Handle the cancel event if needed
+
         })
         alertDialogBuilder.show()
     }
@@ -241,11 +227,11 @@ class HomeFragment : Fragment() {
                     response: Response<NewsResponse>
                 ) {
 
-
                     if (response.isSuccessful) {
                         var data = response.body()
                         var data2 = data?.results
                         Log.e(ContentValues.TAG, "onResponse: ===========${data2}")
+                        Log.e(ContentValues.TAG, "onResponse: ===="+ data?.totalResults )
 
                         binding.bNewsRecycler.layoutManager =
                             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

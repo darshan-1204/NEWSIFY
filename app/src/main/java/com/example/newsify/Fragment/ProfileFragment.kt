@@ -46,7 +46,7 @@ class ProfileFragment : Fragment() {
 //            popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
 //            popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
 //                when (item.itemId) {
-//                    R.id.logout ->
+//                    R.id.logout ->d
 //                        requireContext().startActivity(Intent(context,SignupActivity::class.java))
 //
 //                }

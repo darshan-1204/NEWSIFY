@@ -1,9 +1,5 @@
 package com.example.newsify.Activity
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.newsify.Fragment.HomeFragment
@@ -13,6 +9,7 @@ import com.example.newsify.R
 import com.example.newsify.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,23 +35,5 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-    }
-
-
-    private fun isInternetAvailable(): Boolean {
-        val connectivityManager =
-            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val network = connectivityManager.activeNetwork
-            val capabilities =
-                connectivityManager.getNetworkCapabilities(network)
-            return capabilities != null &&
-                    (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
-                            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))
-        } else {
-            val networkInfo = connectivityManager.activeNetworkInfo
-            return networkInfo != null && networkInfo.isConnected
-        }
     }
 }

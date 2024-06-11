@@ -1,17 +1,25 @@
 package com.example.newsify.Activity
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.example.newsify.databinding.ActivityNewsDetailBinding
 
 class NewsDetailActivity : AppCompatActivity() {
     private val TAG = "NewsDetailActivity"
+    lateinit var binding: ActivityNewsDetailBinding
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding = ActivityNewsDetailBinding.inflate(layoutInflater)
+        binding = ActivityNewsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var content = intent.getStringExtra("content")
@@ -20,8 +28,10 @@ class NewsDetailActivity : AppCompatActivity() {
         var title = intent.getStringExtra("title")
         var url = intent.getStringExtra("link")
 
-        binding.webView.loadUrl(url.toString())
+        var client = CustomWebViewClient(this)
+        binding.webView.webViewClient = client
         binding.webView.settings.javaScriptEnabled = true
+        binding.webView.loadUrl(url.toString())
 
 
         Log.e(TAG, "onCreate: ===$content")
@@ -42,33 +52,34 @@ class NewsDetailActivity : AppCompatActivity() {
         }
 
 
-//        var data = MainActivity.data
-//
-//        if (description!!.contains("<p")) {
-//            Log.e(TAG, "onCreate: ===========")
-//            binding.descNd.visibility = View.GONE
-//        } else {
-//            binding.descNd.text = description.toString()
-//        }
-//        if (content == "null") {
-//
-//        } else {
-//
-//            binding.contentNd.text = content.toString()
-//        }
-//
-//        binding.title.text = title.toString()
-//
-//
-//        binding.btnUrl.setOnClickListener {
-//
-//            var intent = Intent(Intent.ACTION_VIEW)
-//            intent.setData(Uri.parse(url))
-//            startActivity(intent)
-//        }
-
-//        Glide.with(this).load(img).into(binding.imgNd)
-
     }
 
+    @Override
+    public override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK && binding.webView.canGoBack()){
+            binding.webView.goBack()
+            return true
+        }
+
+        return super.onKeyDown(keyCode, event)
+    }
+
+}
+class CustomWebViewClient : WebViewClient {
+
+    private lateinit var activity: Activity
+
+    public constructor(activity : Activity){
+        this.activity = activity
+    }
+
+    @Override
+    public override fun shouldOverrideUrlLoading(webView: WebView, url : String): Boolean {
+        return false
+    }
+
+    @Override
+    public override fun shouldOverrideUrlLoading(webView: WebView,request : WebResourceRequest): Boolean {
+        return false
+    }
 }

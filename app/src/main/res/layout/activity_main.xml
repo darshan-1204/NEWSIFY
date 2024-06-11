@@ -8,16 +8,6 @@
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animateNoInternet"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:layout_weight="1"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:lottie_rawRes="@raw/animate"/>
-
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"

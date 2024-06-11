@@ -135,6 +135,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcvSearch"
                 android:layout_width="match_parent"
+                tools:listitem="@layout/news_layout"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
